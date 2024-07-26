@@ -1,0 +1,28 @@
+{
+  "policies": [
+    {
+      "handler": {
+        "export": "ApiKeyInboundPolicy",
+        "module": "$import(@zuplo/runtime)",
+        "options": {
+          "allowUnauthenticatedRequests": false,
+          "cacheTtlSeconds": 60
+        }
+      },
+      "name": "api-key-inbound",
+      "policyType": "api-key-inbound"
+    },
+    {
+      "handler": {
+        "export": "SetStatusOutboundPolicy",
+        "module": "$import(@zuplo/runtime)",
+        "options": {
+          "status": 200,
+          "statusText": "OK"
+        }
+      },
+      "name": "set-status-outbound",
+      "policyType": "set-status-outbound"
+    }
+  ]
+}
